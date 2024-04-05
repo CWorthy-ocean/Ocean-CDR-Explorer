@@ -1,0 +1,23 @@
+name: mcdr-atlas
+channels:
+- conda-forge
+- default
+dependencies:
+- cartopy
+- cmocean
+- dask
+- distributed
+- dask-jobqueue
+- ipywidgets
+- jupyter-book
+- jupyter_client
+- jupyterlab
+- matplotlib
+- nb_conda_kernels
+- nbformat
+- nbterm
+- numpy
+- PyCO2SYS
+- pandas
+- pop-tools
+- xarray
