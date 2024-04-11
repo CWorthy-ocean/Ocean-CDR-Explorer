@@ -26,6 +26,7 @@ def get_ClusterClient(memory="25GB", project='NCGD0011', walltime='06:00:00'):
         resource_spec=f'select=1:ncpus=1:mem={memory}',
         project=project,
         walltime=walltime,
+        interface='lo', # try 'lo', 'mgt', 'ext', 'eno2'
     )
 
     jupyterhub_server_name = os.environ.get('JUPYTERHUB_SERVER_NAME', None)

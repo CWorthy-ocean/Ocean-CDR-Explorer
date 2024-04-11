@@ -16,8 +16,10 @@ dependencies:
 - nb_conda_kernels
 - nbformat
 - nbterm
+- netCDF4
 - numpy
 - PyCO2SYS
 - pandas
 - pop-tools
+- scipy
 - xarray
