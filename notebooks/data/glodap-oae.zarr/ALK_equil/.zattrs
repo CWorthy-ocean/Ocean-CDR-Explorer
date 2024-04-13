@@ -1,0 +1,9 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "alk_add",
+        "lat",
+        "lon"
+    ],
+    "long_name": "ALK",
+    "units": "\u00b5mol/kg"
+}

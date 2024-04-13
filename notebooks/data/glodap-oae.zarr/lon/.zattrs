@@ -1,0 +1,7 @@
+{
+    "Description": "This number represents the mid-point of the 1x1 degree grid cell",
+    "_ARRAY_DIMENSIONS": [
+        "lon"
+    ],
+    "units": "degrees east"
+}

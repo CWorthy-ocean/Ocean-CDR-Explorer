@@ -1,0 +1,8 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "alk_add",
+        "lat",
+        "lon"
+    ],
+    "long_name": "pH"
+}

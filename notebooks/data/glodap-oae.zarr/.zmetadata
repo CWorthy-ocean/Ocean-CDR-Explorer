@@ -1,0 +1,713 @@
+{
+    "metadata": {
+        ".zattrs": {
+            "description": "GLODAP-based calculations of OAE anomalies using PyCO2SYS"
+        },
+        ".zgroup": {
+            "zarr_format": 2
+        },
+        "ALK/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "ALK/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "ALK",
+            "units": "\u00b5mol/kg"
+        },
+        "ALK_equil/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "ALK_equil/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "ALK",
+            "units": "\u00b5mol/kg"
+        },
+        "CO2/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "CO2/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "dissolved CO2",
+            "units": "\u00b5mol/kg"
+        },
+        "CO2_equil/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "CO2_equil/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "dissolved CO2",
+            "units": "\u00b5mol/kg"
+        },
+        "CO3/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "CO3/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "Carbonate ion",
+            "units": "\u00b5mol/kg"
+        },
+        "CO3_equil/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "CO3_equil/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "Carbonate ion",
+            "units": "\u00b5mol/kg"
+        },
+        "DIC/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "DIC/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "DIC",
+            "units": "\u00b5mol/kg"
+        },
+        "DIC_equil/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "DIC_equil/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "DIC",
+            "units": "\u00b5mol/kg"
+        },
+        "HCO3/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "HCO3/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "Bicarbonate ion",
+            "units": "\u00b5mol/kg"
+        },
+        "HCO3_equil/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "HCO3_equil/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "Bicarbonate ion",
+            "units": "\u00b5mol/kg"
+        },
+        "Omega_arag/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "Omega_arag/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "\u03a9 (aragonite)"
+        },
+        "Omega_arag_equil/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "Omega_arag_equil/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "\u03a9 (aragonite)"
+        },
+        "Omega_calc/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "Omega_calc/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "\u03a9 (calcite)"
+        },
+        "Omega_calc_equil/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "Omega_calc_equil/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "\u03a9 (calcite)"
+        },
+        "alk_add/.zarray": {
+            "chunks": [
+                7
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<i8",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7
+            ],
+            "zarr_format": 2
+        },
+        "alk_add/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add"
+            ],
+            "long_name": "\u2206Alk",
+            "units": "\u00b5mol/kg"
+        },
+        "eta_max/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "eta_max/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "\u2206DIC/\u2206ALK (max)",
+            "units": "mol/mol"
+        },
+        "lat/.zarray": {
+            "chunks": [
+                180
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                180
+            ],
+            "zarr_format": 2
+        },
+        "lat/.zattrs": {
+            "Description": "This number represents the mid-point of the 1x1 degree grid cell",
+            "_ARRAY_DIMENSIONS": [
+                "lat"
+            ],
+            "units": "degrees north"
+        },
+        "lon/.zarray": {
+            "chunks": [
+                360
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                360
+            ],
+            "zarr_format": 2
+        },
+        "lon/.zattrs": {
+            "Description": "This number represents the mid-point of the 1x1 degree grid cell",
+            "_ARRAY_DIMENSIONS": [
+                "lon"
+            ],
+            "units": "degrees east"
+        },
+        "pCO2/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "pCO2/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "pCO2",
+            "units": "\u00b5atm"
+        },
+        "pCO2_equil/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "pCO2_equil/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "pCO2",
+            "units": "\u00b5atm"
+        },
+        "pH/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "pH/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "pH"
+        },
+        "pH_equil/.zarray": {
+            "chunks": [
+                7,
+                10,
+                10
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                7,
+                180,
+                360
+            ],
+            "zarr_format": 2
+        },
+        "pH_equil/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "alk_add",
+                "lat",
+                "lon"
+            ],
+            "long_name": "pH"
+        }
+    },
+    "zarr_consolidated_format": 1
+}

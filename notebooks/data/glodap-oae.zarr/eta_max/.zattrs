@@ -1,0 +1,9 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "alk_add",
+        "lat",
+        "lon"
+    ],
+    "long_name": "\u2206DIC/\u2206ALK (max)",
+    "units": "mol/mol"
+}
