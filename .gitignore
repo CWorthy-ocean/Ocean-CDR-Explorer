@@ -130,3 +130,4 @@ dmypy.json
 
 # jupyter-book build directory
 so-co2-airborne-obs/_build/
+PET0.RegridWeightGen.Log
