@@ -93,7 +93,7 @@ class calc_csys(object):
     Solve carbonate system chemistry using PyCO2SYS, but in volumetric units.
     """
 
-    def __init__(self, dic, alk, salt, temp, sio3, po4, equil_constants={}):
+    def __init__(self, dic, alk, salt, temp, sio3=0.0, po4=0.0, equil_constants={}):
         self.salt = salt
         self.temp = temp
         self.sio3 = sio3
@@ -105,6 +105,7 @@ class calc_csys(object):
                 salinity=self.salt,
             )
             self.equil_constants = {k: v for k, v in result.items() if k[:2] == 'k_'}
+            self.equil_constants['total_borate'] = result['total_borate']
         else:
             self.equil_constants = equil_constants
 
@@ -148,7 +149,11 @@ class calc_csys(object):
     def alk(self):
         """Return alk in mmol/m^3"""
         return µmolkg_to_mmolm3(self.co2sys['alkalinity'])
-        
+
+    @property
+    def pH(self):
+        return self.co2sys['pH_total'] # what's the right choice here?
+
     def calc_new_dic_w_oae(self, new_alk):
         """Compute the new DIC concentration in mmol/m^3
            after alkalinity addition assuming pCO2 has not changed.
@@ -166,12 +171,59 @@ class calc_csys(object):
         )
         return µmolkg_to_mmolm3(new_co2sys['dic'])
 
+    def ddicdco2(self, new_alk):
+        """
+        Compute the partial derivative of DIC wrt CO2
+        """
+
+        k1 = self.equil_constants['k_carbonic_1'] # ['k_h2co3']
+        k2 = self.equil_constants['k_carbonic_2'] # ['k_hco3']
+        kb = self.equil_constants['k_borate'] # ['k_hbo2']
+        bt = µmolkg_to_mmolm3(self.equil_constants['total_borate'])
+        kw = self.equil_constants['k_water'] # ['k_oh']
+
+        new_co2sys = csys.sys(
+            par1=mmolm3_to_µmolkg(self.dic),
+            par2=mmolm3_to_µmolkg(new_alk),
+            par1_type=par_type['DIC'],
+            par2_type=par_type['ALK'],
+            temperature=self.temp,
+            salinity=self.salt,
+            total_silicate=self.sio3,
+            total_phosphate=self.po4,
+            **self.equil_constants,
+        )
+        co2 = µmolkg_to_mmolm3(new_co2sys['CO2'])
+        pH = new_co2sys['pH_total']
+        
+        # preliminaries
+        h = 10 ** (-pH)
+        h2 = h * h
+        h3 = h * h * h
+        k1k2 = k1 * k2
+        kb_p_h_sq = (kb + h) ** 2
+    
+        # dDIC/d[CO2], pH = constant
+        Ds = 1 + k1 / h + k1k2 / h2
+    
+        # dDIC/d[H+], [CO2] = constant
+        Dh = -co2 * (k1 / h2 + 2 * k1k2 / h3)
+    
+        # dAlk/d[CO2], pH = constant
+        As = k1 / h + 2 * k1k2 / h2
+    
+        # dAlk/d[H+], [CO2] = constant
+        Ah = -co2 * (k1 / h2 + 4 * k1k2 / h3) - kb * bt / kb_p_h_sq - kw / h2 - 1
+    
+        # the result
+        return Ds - Dh * As / Ah
+
 
 class mixed_layer(object):
     """
     A simple mixed layer model where 
     mixed layer depth, temperature, salinity, etc. are held constant
-    and only DIC and Alk vary.
+    and only DIC varies (and eventually maybe Alk too).
     """
 
     def __init__(self, dic, alk, h, u10, Xco2atm, salt, temp, sio3, po4):
