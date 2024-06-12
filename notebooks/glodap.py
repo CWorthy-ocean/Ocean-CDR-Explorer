@@ -8,7 +8,7 @@ import xarray as xr
 import urllib
 
 
-USER = os.environ['USER']
+USER = os.environ["USER"]
 cache_dir = f"/glade/work/{USER}/glodap"
 
 known_products = [
@@ -116,14 +116,14 @@ def open_glodap(product="GLODAPv1"):
         }
     )
     for v in ds.data_vars:
-        if 'units' in ds[v].attrs and ds[v].attrs['units'] == 'micro-mol kg-1':
-            ds[v].attrs['units'] = 'µmol kg$^{-1}$'
+        if "units" in ds[v].attrs and ds[v].attrs["units"] == "micro-mol kg-1":
+            ds[v].attrs["units"] = "µmol kg$^{-1}$"
 
     ds["area"] = compute_grid_area(ds)
     ds["depth_bnds"] = depth_bnds
     ds["dz"] = depth_bnds.diff("bnds").squeeze()
-    if 'Comment' in ds.attrs:
-        del ds.attrs['Comment']
+    if "Comment" in ds.attrs:
+        del ds.attrs["Comment"]
     return ds
 
 
@@ -169,7 +169,7 @@ def compute_grid_area(ds, check_total=True):
     """
 
     radius_earth = 6.37122e6  # m, radius of Earth
-    area_earth = 4.0 * np.pi * radius_earth ** 2  # area of earth [m^2]e
+    area_earth = 4.0 * np.pi * radius_earth**2  # area of earth [m^2]e
 
     lon_name = "lon"
     lat_name = "lat"
