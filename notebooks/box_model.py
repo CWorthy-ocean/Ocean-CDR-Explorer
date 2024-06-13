@@ -524,7 +524,7 @@ class mixed_layer(object):
             state_out = state_in + dcdt * self.dt
             return np.sum((state_in - state_out) ** 2)
 
-        opt_result = minimize(wrapper, self.state, bounds=[(1.0, 6000.0)])
+        opt_result = minimize(wrapper, self.state, bounds=[(1.0, 6000.0)], tol=1e-12)
         self.state = opt_result.x
 
 
