@@ -8,6 +8,9 @@ dependencies:
 - dask
 - distributed
 - dask-jobqueue
+- esmpy
+- ffmpeg
+- holoviews
 - ipywidgets
 - jupyter-book
 - jupyter_client
@@ -22,5 +25,8 @@ dependencies:
 - pandas
 - pop-tools
 - scipy
+- seawater
 - xarray
+- xesmf
+- xgcm
 - zarr
