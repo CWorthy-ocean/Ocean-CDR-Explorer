@@ -44,7 +44,7 @@ def gas_transfer_velocity(u10, temp):
     """
     sc = schmidt_co2(temp)
     u10sq = u10 * u10
-    return xkw_coef * u10sq * (np.sqrt(sc / 660.0))
+    return xkw_coef * u10sq * (np.sqrt(660.0 / sc))
 
 
 def schmidt_co2(sst):
